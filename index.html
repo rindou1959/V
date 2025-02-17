@@ -3,177 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vi, Are You Still Mad?</title>
+    <title>I'm Sorry, Vi 🐱💖</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 
-        /* Dark romantic background */
         body {
-            font-family: 'Poppins', sans-serif;
-            background: black;
-            color: white;
-            height: 100vh;
+            font-family: 'Patrick Hand', cursive;
+            text-align: center;
+            background: linear-gradient(90deg, #c9a17a, #e2c2a5);
+            margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            text-align: center;
-            margin: 0;
+            height: 100vh;
             overflow: hidden;
             position: relative;
         }
-
-        /* Floating hearts animation */
-        .heart {
-            position: absolute;
-            color: red;
-            font-size: 20px;
-            animation: float 5s infinite ease-in-out;
-            opacity: 0.6;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(100vh) scale(1); opacity: 0; }
-            50% { opacity: 1; }
-            100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
-        }
-
-        /* Card container */
         .container {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 235, 205, 0.9);
             padding: 30px;
             border-radius: 15px;
-            box-shadow: 0 0 15px rgba(255, 0, 100, 0.5);
-            max-width: 400px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        h1 {
-            font-size: 22px;
-            color: white;
-        }
-
-        /* Glowing 3D Button */
-        .btn {
-            display: block;
-            width: 100%;
-            padding: 15px;
-            margin: 10px 0;
-            font-size: 18px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: bold;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 80%;
             position: relative;
-            transition: 0.3s ease-in-out;
+            z-index: 1;
         }
-
-        .yes {
-            background: #ff4d4d;
+        h1 {
+            color: #5a3e2b;
+            font-size: 2.5em;
+        }
+        p {
+            font-size: 1.4em;
+            color: #704e37;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            font-size: 1.4em;
+            padding: 12px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: transform 0.3s, background 0.3s;
+        }
+        #yesBtn {
+            background-color: #d1856c;
             color: white;
-            box-shadow: 0px 0px 15px rgba(255, 77, 77, 0.8);
         }
-
-        .no {
-            background: #4caf50;
-            color: white;
-            box-shadow: 0px 0px 15px rgba(76, 175, 80, 0.8);
+        #yesBtn:hover {
+            background-color: #b36950;
+            transform: scale(1.1);
         }
-
-        .yes:hover {
-            box-shadow: 0px 0px 25px rgba(255, 77, 77, 1);
+        .floating-cats {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
         }
-
-        .no:hover {
-            box-shadow: 0px 0px 25px rgba(76, 175, 80, 1);
+        .cat {
+            position: absolute;
+            font-size: 2em;
+            animation: float 5s infinite ease-in-out;
         }
-
-        /* Love Message Pop-up */
-        .message-box {
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+        }
+        /* Custom Pop-up */
+        .popup {
             display: none;
             position: fixed;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background: rgba(255, 255, 255, 0.9);
+            background: #fff0e6;
+            color: #5a3e2b;
             padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(255, 0, 100, 0.8);
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            z-index: 2;
             text-align: center;
-            color: black;
-            max-width: 350px;
-            animation: fadeIn 0.5s ease-in-out;
+            font-size: 1.4em;
         }
-
-        .message-box p {
-            font-size: 16px;
-            color: black;
-        }
-
-        .close-btn {
-            margin-top: 15px;
-            background: #ff4081;
+        .popup button {
+            background-color: #d1856c;
             color: white;
-            padding: 10px 15px;
             border: none;
-            border-radius: 5px;
+            padding: 10px 15px;
+            border-radius: 8px;
             cursor: pointer;
+            margin-top: 15px;
         }
-
-        .close-btn:hover {
-            background: #d81b60;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translate(-50%, -55%); }
-            to { opacity: 1; transform: translate(-50%, -50%); }
+        .popup button:hover {
+            background-color: #b36950;
         }
     </style>
 </head>
 <body>
+    <div class="floating-cats"></div>
+    <div class="container">
+        <h1>Vi, I'm So Sorry 🐱💖</h1>
+        <p>
+            I never meant to hurt you.  
+            Every moment without your smile feels empty.  
+            If I could, I’d rewrite every second to make you happy.  
+            You mean the world to me. Please forgive me, my love.  
+        </p>
+        <div class="buttons">
+            <button id="yesBtn">Forgive Me? 🐾</button>
+        </div>
+    </div>
 
-    <!-- Floating Hearts -->
+    <!-- Custom Pop-up -->
+    <div id="popup" class="popup">
+        Thank you, Vi! I love you so much! 🐱💕  
+        <br>
+        <button onclick="closePopup()">OK</button>
+    </div>
+
     <script>
-        function createHearts() {
-            for (let i = 0; i < 15; i++) {
-                let heart = document.createElement("div");
-                heart.className = "heart";
-                heart.innerHTML = "❤️";
-                heart.style.left = Math.random() * 100 + "vw";
-                heart.style.animationDuration = Math.random() * 3 + 2 + "s";
-                document.body.appendChild(heart);
+        document.getElementById("yesBtn").addEventListener("click", function() {
+            document.getElementById("popup").style.display = "block";
+        });
 
-                setTimeout(() => {
-                    heart.remove();
-                }, 5000);
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+
+        function createFloatingCats() {
+            const catEmojis = ['🐱', '😺', '😻', '😽', '🐾'];
+            for (let i = 0; i < 10; i++) {
+                let cat = document.createElement("div");
+                cat.classList.add("cat");
+                cat.innerHTML = catEmojis[Math.floor(Math.random() * catEmojis.length)];
+                cat.style.left = Math.random() * 100 + "vw";
+                cat.style.animationDuration = Math.random() * 3 + 4 + "s";
+                document.querySelector(".floating-cats").appendChild(cat);
+                setTimeout(() => cat.remove(), 5000);
             }
         }
-        setInterval(createHearts, 800);
+
+        setInterval(createFloatingCats, 1000);
     </script>
-
-    <!-- Romantic Card -->
-    <div class="container">
-        <h1>Vi, are you still mad at me? <span class="emoji">🥺</span></h1>
-        <button class="btn yes">Yes 😠</button>
-        <button class="btn no" onclick="showLoveMessage()">No, I'm not mad! ❤️</button>
-    </div>
-
-    <!-- Love Message Popup -->
-    <div class="message-box" id="messageBox">
-        <p>Yay! I knew you couldn’t stay mad at me for long. You are my everything, and I’ll always make sure you smile! ❤️🥰</p>
-        <button class="close-btn" onclick="closeMessage()">Close</button>
-    </div>
-
-    <!-- JavaScript -->
-    <script>
-        function showLoveMessage() {
-            document.getElementById("messageBox").style.display = "block";
-        }
-
-        function closeMessage() {
-            document.getElementById("messageBox").style.display = "none";
-        }
-    </script>
-
 </body>
 </html>
