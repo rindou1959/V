@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vi, Are You Still Mad?</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+        /* Dark romantic background */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: black;
+            color: white;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin: 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Floating hearts animation */
+        .heart {
+            position: absolute;
+            color: red;
+            font-size: 20px;
+            animation: float 5s infinite ease-in-out;
+            opacity: 0.6;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) scale(1); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+        }
+
+        /* Card container */
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(255, 0, 100, 0.5);
+            max-width: 400px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        h1 {
+            font-size: 22px;
+            color: white;
+        }
+
+        /* Glowing 3D Button */
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            position: relative;
+            transition: 0.3s ease-in-out;
+        }
+
+        .yes {
+            background: #ff4d4d;
+            color: white;
+            box-shadow: 0px 0px 15px rgba(255, 77, 77, 0.8);
+        }
+
+        .no {
+            background: #4caf50;
+            color: white;
+            box-shadow: 0px 0px 15px rgba(76, 175, 80, 0.8);
+        }
+
+        .yes:hover {
+            box-shadow: 0px 0px 25px rgba(255, 77, 77, 1);
+        }
+
+        .no:hover {
+            box-shadow: 0px 0px 25px rgba(76, 175, 80, 1);
+        }
+
+        /* Love Message Pop-up */
+        .message-box {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255, 0, 100, 0.8);
+            text-align: center;
+            color: black;
+            max-width: 350px;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .message-box p {
+            font-size: 16px;
+            color: black;
+        }
+
+        .close-btn {
+            margin-top: 15px;
+            background: #ff4081;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .close-btn:hover {
+            background: #d81b60;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translate(-50%, -55%); }
+            to { opacity: 1; transform: translate(-50%, -50%); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating Hearts -->
+    <script>
+        function createHearts() {
+            for (let i = 0; i < 15; i++) {
+                let heart = document.createElement("div");
+                heart.className = "heart";
+                heart.innerHTML = "❤️";
+                heart.style.left = Math.random() * 100 + "vw";
+                heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+                document.body.appendChild(heart);
+
+                setTimeout(() => {
+                    heart.remove();
+                }, 5000);
+            }
+        }
+        setInterval(createHearts, 800);
+    </script>
+
+    <!-- Romantic Card -->
+    <div class="container">
+        <h1>Vi, are you still mad at me? <span class="emoji">🥺</span></h1>
+        <button class="btn yes">Yes 😠</button>
+        <button class="btn no" onclick="showLoveMessage()">No, I'm not mad! ❤️</button>
+    </div>
+
+    <!-- Love Message Popup -->
+    <div class="message-box" id="messageBox">
+        <p>Yay! I knew you couldn’t stay mad at me for long. You are my everything, and I’ll always make sure you smile! ❤️🥰</p>
+        <button class="close-btn" onclick="closeMessage()">Close</button>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        function showLoveMessage() {
+            document.getElementById("messageBox").style.display = "block";
+        }
+
+        function closeMessage() {
+            document.getElementById("messageBox").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
